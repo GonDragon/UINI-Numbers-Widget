@@ -21,6 +21,16 @@ namespace UINotIncluded.Widget.Configs
         {
             tableName = numbersTable.label;
             comaDelimitedTable = numbersTable.comaDelimitedTable;
+
+            def = new MainButtonDef()
+            {
+                defName = "UINI_NMB" + tableName,
+                label = tableName,
+                description = "Custom window made using the mod Numbers.",
+                tabWindowClass = typeof(Windows.CustomNumberWindows_Numbers),
+                closesWorldView = true
+            };
+            Reset();
         }
         public NumbersConfig() { } //Empty constructor to load from
 
@@ -39,7 +49,6 @@ namespace UINotIncluded.Widget.Configs
                         tabWindowClass = typeof(Windows.CustomNumberWindows_Numbers),
                         closesWorldView = true
                     };
-                    Reset();
                 }
                 return def;
             }

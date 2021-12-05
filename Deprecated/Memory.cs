@@ -21,12 +21,11 @@ namespace UINotIncluded
                 label = tableName,
                 comaDelimitedTable = unparsedTable
             });
-            config.Def.label = tableName;
-            ((ButtonConfig)config).Label = fakeButtonMemory.label;
-            ((ButtonConfig)config).minimized = fakeButtonMemory.minimized;
-            ((ButtonConfig)config).IconPath = fakeButtonMemory.iconPath;
-            ((ButtonConfig)config).RefreshIcon();
-            ((ButtonConfig)config).RefreshCache();
+            config.Label = fakeButtonMemory.label;
+            config.minimized = fakeButtonMemory.minimized;
+            config.IconPath = fakeButtonMemory.iconPath;
+            config.RefreshIcon();
+            config.RefreshCache();
             return config;
         }
 
