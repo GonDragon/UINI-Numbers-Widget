@@ -13,14 +13,13 @@ namespace UINotIncluded.Widget
     {
         static NumbersTablesManager()
         {
-            Widget.WidgetManager.AddGetter("Numbers Button", TablesToConfigs);
+            Widget.WidgetManager.AddButtonGetter("Numbers Button", TablesToConfigs);
         }
-        public static IEnumerable<Configs.ElementConfig> TablesToConfigs()
+        public static IEnumerable<Configs.ButtonConfig> TablesToConfigs()
         {
             foreach (NumbersTable table in AvaibleTables())
             {
-                Widget.Configs.ElementConfig config = new Configs.NumbersConfig(table);
-                if (!config.Repeatable && (Settings.TopBarElements.Contains(config) || Settings.BottomBarElements.Contains(config))) continue;
+                Widget.Configs.ButtonConfig config = new Configs.NumbersConfig(table);
                 yield return config;
             }
         }
