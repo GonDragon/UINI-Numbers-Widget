@@ -96,21 +96,11 @@ namespace UINotIncluded.Widget.Configs
             ((Windows.CustomNumberWindows_Numbers)((MainButtonDef)Def).TabWindow).UpdatedColumns = newColumns;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equivalent(ElementConfig other)
         {
-            return obj is NumbersConfig config &&
-                   base.Equals(obj) &&
+            return other is NumbersConfig config &&
                    tableName == config.tableName &&
                    comaDelimitedTable == config.comaDelimitedTable;
-        }
-
-        public override int GetHashCode()
-        {
-            int hashCode = 1572851286;
-            hashCode = hashCode * -1521134295 + base.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(tableName);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(comaDelimitedTable);
-            return hashCode;
         }
     }
 }
