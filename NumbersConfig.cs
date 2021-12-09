@@ -45,7 +45,6 @@ namespace UINotIncluded.Widget.Configs
                     def = new MainButtonDef() {
                         defName = "UINI_NMB" + tableName,
                         label = tableName,
-                        description = "Custom window made using the mod Numbers.",
                         tabWindowClass = typeof(Windows.CustomNumberWindows_Numbers),
                         closesWorldView = true
                     };
