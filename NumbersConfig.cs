@@ -1,17 +1,12 @@
-﻿using System;
+﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using RimWorld;
 using Verse;
 
 namespace UINotIncluded.Widget.Configs
 {
     public class NumbersConfig : ButtonConfig
     {
-
         private MainButtonDef def;
         public string tableName;
         public string comaDelimitedTable;
@@ -32,7 +27,9 @@ namespace UINotIncluded.Widget.Configs
             };
             Reset();
         }
-        public NumbersConfig() { } //Empty constructor to load from
+
+        public NumbersConfig()
+        { } //Empty constructor to load from
 
         public override string SettingLabel => tableName;
 
@@ -42,7 +39,8 @@ namespace UINotIncluded.Widget.Configs
             {
                 if (def == null)
                 {
-                    def = new MainButtonDef() {
+                    def = new MainButtonDef()
+                    {
                         defName = "UINI_NMB" + tableName,
                         label = tableName,
                         tabWindowClass = typeof(Windows.CustomNumberWindows_Numbers),
@@ -52,7 +50,6 @@ namespace UINotIncluded.Widget.Configs
                 return def;
             }
         }
-
 
         public override void ExposeData()
         {

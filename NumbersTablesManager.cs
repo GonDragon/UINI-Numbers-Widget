@@ -1,9 +1,5 @@
-﻿using System;
+﻿using RimWorld;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RimWorld;
 using Verse;
 
 namespace UINotIncluded.Widget
@@ -15,6 +11,7 @@ namespace UINotIncluded.Widget
         {
             Widget.WidgetManager.AddButtonGetter("Numbers Button", TablesToConfigs);
         }
+
         public static IEnumerable<Configs.ButtonConfig> TablesToConfigs()
         {
             foreach (NumbersTable table in AvaibleTables())
@@ -23,6 +20,7 @@ namespace UINotIncluded.Widget
                 yield return config;
             }
         }
+
         public static IEnumerable<NumbersTable> AvaibleTables()
         {
             HarmonyLib.Traverse staticNumbers = HarmonyLib.Traverse.CreateWithType("Numbers.StaticConstructorOnGameStart");
@@ -67,7 +65,6 @@ namespace UINotIncluded.Widget
                 };
             }
 
-
             Numbers.NumbersDefOf.Numbers_MainTable.columns = initial;
             foreach (string stringtable in LoadedModManager.GetMod<Numbers.Numbers>().GetSettings<Numbers.Numbers_Settings>().storedPawnTableDefs)
             {
@@ -77,7 +74,6 @@ namespace UINotIncluded.Widget
                 {
                     label = pawnTableDef[1] == "Default" ? pawnTableDef[0].Split('_')[1] + " (" + pawnTableDef[1] + ")" : pawnTableDef[1],
                     comaDelimitedTable = stringtable
-
                 };
             }
         }
@@ -88,6 +84,5 @@ namespace UINotIncluded.Widget
             PawnTable.columns = new List<PawnColumnDef>(list);
             return PawnTable;
         }
-
     }
 }

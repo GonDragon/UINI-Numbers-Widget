@@ -1,6 +1,4 @@
-﻿
-
-namespace UINotIncluded.Widget
+﻿namespace UINotIncluded.Widget
 {
     public struct NumbersTable
     {
